@@ -1,0 +1,7 @@
+{
+  "agent_type": "prd",
+  "display_name": "产品需求 Agent",
+  "stage": "PRD",
+  "description": "生成可评审、可验收、可追踪的产品需求文档。",
+  "skill_sources": ["prd-writer"]
+}

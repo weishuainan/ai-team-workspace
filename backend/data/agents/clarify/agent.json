@@ -1,0 +1,7 @@
+{
+  "agent_type": "clarify",
+  "display_name": "需求澄清 Agent",
+  "stage": "CLARIFY",
+  "description": "澄清问题边界、目标用户、核心场景与待确认信息。",
+  "skill_sources": ["req-clarifier"]
+}

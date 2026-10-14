@@ -1,0 +1,7 @@
+{
+  "agent_type": "ux",
+  "display_name": "交互设计 Agent",
+  "stage": "UX",
+  "description": "设计页面结构、用户流程、交互规则和异常状态。",
+  "skill_sources": ["ux-design"]
+}

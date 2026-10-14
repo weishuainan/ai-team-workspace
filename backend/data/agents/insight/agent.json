@@ -1,0 +1,7 @@
+{
+  "agent_type": "insight",
+  "display_name": "需求洞察 Agent",
+  "stage": "INSIGHT",
+  "description": "基于事实识别用户痛点、关键假设和机会点。",
+  "skill_sources": ["material-summary", "user-problem-analysis"]
+}

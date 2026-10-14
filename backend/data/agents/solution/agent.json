@@ -1,0 +1,7 @@
+{
+  "agent_type": "solution",
+  "display_name": "方案设计 Agent",
+  "stage": "SOLUTION",
+  "description": "把需求转化为可比较、可验证的产品运营方案。",
+  "skill_sources": ["user-problem-analysis"]
+}

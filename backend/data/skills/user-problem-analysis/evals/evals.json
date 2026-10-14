@@ -1,0 +1,19 @@
+{
+  "skill_name": "user-problem-analysis",
+  "evals": [
+    {
+      "id": 1,
+      "name": "user-feedback-scenario",
+      "prompt": "项目名称：外卖新用户首单转化优化\n项目目标：找到新用户首单流失的核心节点，并形成可进入需求评审的优化方案\n\n已确认材料总结（摘要）：\n- 核心事实：首单转化率从42%降至35%（来源：卫帅楠，置信度：高）；收到12条用户反馈（来源：张思琪，置信度：高）；下单耗时从3分钟变为5分钟（来源：卫帅楠，置信度：低）；App Store 有用户评论吐槽（来源：张思琪，source_type: user_feedback）\n- 用户问题：优惠券找不到入口（高频）；不知道怎么下单更便宜（中频）\n- 冲突点：高文颖主张首页放红包入口 vs 卫帅楠担忧影响老用户信息流体验\n- 观点：卫帅楠认为先搞清楚原因再定方案\n\n当前指令：根据材料总结和讨论，分析新用户首单流失的核心问题及原因",
+      "expected_output": "user_profiles定义外卖新用户。scenarios定义首单下单场景。pain_points至少2条（下单流程过长impact:high frequency:frequent、优惠券找不到入口impact:high frequency:frequent）。known_facts至少3条引用材料总结。cause_hypotheses至少3条：H1[judgment]选餐流程改版导致流失(confidence:medium,验证:对比各步骤流失率)、H2[judgment]优惠券入口不显眼(confidence:medium)、H3[hypothesis]首页红包入口可能提升转化(confidence:low,contradicting_evidence必须提及卫帅楠担忧)。open_questions关联假设编号且提供具体验证方向。opportunities不写成功能需求。analysis_confidence:medium。fact_hypothesis_separation:true。不得出现编造的数字。不得输出功能方案。",
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "data-anomaly-scenario",
+      "prompt": "项目名称：外卖满减活动核销率异常分析\n项目目标：定位近期外卖满减活动核销率下降的原因并给出优化建议\n\n已确认材料总结（摘要）：\n- 核心事实：整体核销率从15%降至9%（高置信度）；APP弹窗渠道从20%降至8%（高置信度）；Push/短信渠道持平（高置信度）；满减门槛从满20改为满30（高置信度）；弹窗样式08月1日上线（中置信度，高文颖说确认但张思琪不确定）；用户评价提到\"券太少\"和\"门槛太高\"\n- 冲突点：高文颖确认弹窗改了 vs 张思琪不确定改没改\n- 观点：高文颖猜测弹窗样式导致；卫帅楠认为满减门槛也可能是因素；卫帅楠认为不排除其他原因\n\n当前指令：根据材料总结分析核销率下降的核心原因",
+      "expected_output": "known_facts至少5条引用。cause_hypotheses至少3条：H1[judgment]弹窗样式变更导致注意力下降(confidence:medium,contradicting_evidence必须体现高文颖vs张思琪的冲突)、H2[judgment]满减门槛提高降低使用意愿(confidence:high)、H3[hypothesis]叠加效应(confidence:low)。open_questions提供具体验证方向（找前端确认变更记录、联系测试负责人、拉取变更记录）。冲突点必须体现在H1的contradicting_evidence中。不得编造核销率的具体分拆数字。analysis_confidence:medium。",
+      "files": []
+    }
+  ]
+}

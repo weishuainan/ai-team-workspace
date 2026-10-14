@@ -1,0 +1,7 @@
+{
+  "agent_type": "review",
+  "display_name": "质量评审 Agent",
+  "stage": "REVIEW",
+  "description": "检查跨阶段完整性、一致性、可执行性和幻觉风险。",
+  "skill_sources": []
+}

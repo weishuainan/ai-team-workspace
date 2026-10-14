@@ -1,0 +1,7 @@
+{
+  "agent_type": "mrd",
+  "display_name": "市场需求 Agent",
+  "stage": "MRD",
+  "description": "沉淀用户价值、业务价值、指标与风险，形成可评审 MRD。",
+  "skill_sources": []
+}

@@ -1,0 +1,212 @@
+/* White Age — porcelain, ink and mist. Intentionally no chromatic accent. */
+:root {
+  font-family: Inter, "Noto Sans SC", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+  --violet: #171816;
+  --violet-dark: #0d0e0d;
+  --violet-light: #eff0ee;
+  --ice: #171816;
+  --ice-strong: #292a28;
+  --ice-pale: #eff0ee;
+  --text: #151614;
+  --muted: #898d89;
+  --line: rgba(18, 19, 17, .085);
+  --panel: rgba(255, 255, 255, .76);
+  --shadow: 0 24px 70px rgba(20, 22, 19, .065), 0 2px 8px rgba(20, 22, 19, .025);
+  --success: #2c2d2a;
+}
+
+html, body { background: #f1f3f2; }
+body {
+  color: #151614;
+  letter-spacing: -.015em;
+  background:
+    radial-gradient(circle at 90% 2%, rgba(255,255,255,.95), transparent 31%),
+    radial-gradient(circle at 8% 96%, rgba(255,255,255,.82), transparent 24%),
+    linear-gradient(145deg, #f5f6f5 0%, #eef1f0 100%);
+}
+body::before { opacity: .16; }
+
+.global-header, .home-header {
+  background: rgba(252,253,252,.74);
+  border-bottom-color: rgba(17,18,16,.065);
+  box-shadow: 0 8px 38px rgba(18,19,17,.035), inset 0 -1px 0 rgba(255,255,255,.78);
+  backdrop-filter: blur(30px) saturate(110%);
+}
+.brand-mark {
+  color: #fff;
+  background: #171816;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.12), 0 9px 25px rgba(17,18,16,.13);
+}
+.brand em { color: #6d716d; background: #eff0ee; }
+.primary-button { color: #fff; background: #171816; border-color: #171816; box-shadow: 0 9px 26px rgba(17,18,16,.13); }
+.primary-button:hover { color: #fff; background: #323330; border-color: #323330; }
+.outline-button { color: #393b38; border-color: rgba(17,18,16,.105); background: rgba(255,255,255,.60); }
+.outline-button:hover { color: #111210; border-color: rgba(17,18,16,.22); background: #fff; }
+.search-box { border-color: rgba(17,18,16,.075); background: rgba(255,255,255,.56); }
+.search-box:focus-within { border-color: rgba(17,18,16,.20); box-shadow: 0 0 0 4px rgba(17,18,16,.045); }
+.icon-button:hover { color: #111210; background: rgba(17,18,16,.055); }
+
+/* A light, floating navigation rail — matching the reference instead of a dark app shell. */
+.sidebar {
+  color: #191a18;
+  border-right: 1px solid rgba(17,18,16,.075);
+  background:
+    radial-gradient(circle at 0 100%, rgba(226,230,228,.72), transparent 28%),
+    rgba(250,251,250,.84);
+  box-shadow: 12px 0 45px rgba(17,18,16,.035), inset -1px 0 rgba(255,255,255,.72);
+  backdrop-filter: blur(28px) saturate(105%);
+}
+.workspace-switch {
+  color: #20211f;
+  border-color: rgba(17,18,16,.08);
+  background: rgba(255,255,255,.68);
+  box-shadow: 0 12px 35px rgba(20,22,19,.05), inset 0 1px 0 #fff;
+}
+.workspace-switch:hover { border-color: rgba(17,18,16,.18); background: #fff; }
+.workspace-icon { color: #fff; background: #171816; box-shadow: 0 7px 20px rgba(17,18,16,.13); }
+.workspace-switch > span:last-child { color: #929692; }
+.workspace-switch-menu { border-color: rgba(17,18,16,.09); background: rgba(252,253,252,.94); }
+.workspace-switch-menu > button { color: #656965; }
+.workspace-switch-menu > button:hover, .workspace-switch-menu > button.active { color: #151614; background: #eff0ee; }
+.sidebar nav { gap: 4px; }
+.sidebar nav button { color: #777b77; }
+.sidebar nav button:hover { color: #171816; background: rgba(17,18,16,.04); }
+.sidebar nav button.active { color: #fff; background: #171816; box-shadow: 0 12px 30px rgba(17,18,16,.12); }
+.sidebar nav button em { color: #555854; background: #e9ebe8; }
+.sidebar nav button.active em { color: #171816; background: #fff; }
+.sidebar nav button.dashboard-draggable-nav::after { color: rgba(17,18,16,.25); }
+.sidebar nav button.active.dashboard-draggable-nav::after { color: rgba(255,255,255,.38); }
+.side-divider { background: rgba(17,18,16,.07); }
+.sidebar .side-label { color: #a0a4a0; }
+.recent-projects > button { color: #6d716d; }
+.recent-projects > button:hover { color: #171816; background: rgba(17,18,16,.04); }
+.recent-projects > button > i:last-child { color: #424440; background: #eceeeb; }
+.all-projects, .agent-status > button { color: #3d3f3c; }
+.agent-status {
+  color: #222320;
+  border-color: rgba(17,18,16,.085);
+  background: rgba(255,255,255,.64);
+  box-shadow: 0 18px 48px rgba(17,18,16,.05), inset 0 1px 0 #fff;
+}
+.agent-status > span { color: #777b77; }
+.agent-stack .agent-badge, .agent-stack > i { border-color: #fff; }
+
+.page { background: transparent; }
+.stage-rail, .workspace-panel, .page-card, .workflow-canvas-card,
+.context-card, .artifact-card, .member-card, .task-card,
+.settings-section, .review-card, .workflow-editor-card,
+.dashboard-addon-panel, .management-summary, .home-focus-card,
+.home-review-card, .management-section, .projects-page-stats {
+  border-color: rgba(17,18,16,.075);
+  background: rgba(255,255,255,.70);
+  box-shadow: 0 26px 75px rgba(20,22,19,.06), inset 0 1px 0 rgba(255,255,255,.96);
+  backdrop-filter: blur(28px) saturate(105%);
+}
+.workspace-panel, .page-card, .dashboard-addon-panel { border-radius: 22px; }
+.panel-head { border-bottom-color: rgba(17,18,16,.065); }
+.panel-head > div > button.active { color: #111210; }
+.panel-head > div > button.active::after { background: #171816; }
+.panel-more:hover, .panel-more.active { color: #111210; background: #eff0ee; }
+
+.stage-node.current { color: #fff; background: #171816; box-shadow: 0 14px 35px rgba(17,18,16,.13); }
+.stage-node.current > i { color: #171816; background: #fff; box-shadow: none; }
+.stage-node.current small, .stage-node.current > .icon { color: #c8cbc7; }
+.stage-node.done > i, .workflow-canvas-node > header > span,
+.workflow-canvas-node.ready > header > em, .workflow-canvas-legend > em,
+.stage-task-group > header em, .status-pill.current, .status-pill.ready,
+.status-pill.queued, .message > div > header em {
+  color: #3c3e3b;
+  background: #eceeeb;
+}
+.workflow-canvas-node.ready, .workflow-canvas-node.selected, .workflow-canvas-node.connecting { border-color: rgba(17,18,16,.28); box-shadow: 0 12px 30px rgba(17,18,16,.07); }
+.workflow-edge-layer path { stroke: rgba(17,18,16,.42); }
+.workflow-edge-layer marker path { fill: #171816; }
+.dashboard-resize-handle { color: #393b38; background: linear-gradient(135deg, transparent 50%, rgba(17,18,16,.58) 50%); }
+
+.human-bubble { color: #fff; background: #171816; }
+.agent-bubble { background: rgba(255,255,255,.68); border-color: rgba(17,18,16,.07); }
+.message.system-message .system-center .agent-bubble, .review-bar { border-color: rgba(17,18,16,.08); background: #f1f2f0; }
+.review-bar-info .icon, .result-link, .panel-link, .resource-section-head > button { color: #3b3d3a; }
+.composer { border-color: rgba(17,18,16,.10); background: rgba(255,255,255,.70); box-shadow: 0 16px 45px rgba(17,18,16,.055); }
+.composer.drag-over { border-color: #343532; background: #f1f2f0; }
+.composer-formatbar button:hover, .composer > .composer-actions > button:hover,
+.composer > .composer-actions > button.active { color: #171816; background: #eceeeb; box-shadow: none; }
+.composer .send-button { color: #fff; background: #171816; box-shadow: 0 8px 24px rgba(17,18,16,.14); }
+.composer .send-button:hover:not(:disabled) { background: #333431; }
+.panel-link:hover { color: #111210; background: #f0f1ef; }
+
+.agent-badge.violet, .agent-badge.slate, .agent-badge.amber,
+.agent-badge.orange, .agent-badge.red, .agent-badge.green { color: #252624; background: #eceeeb; }
+.agent-badge > span { background: #171816; }
+.project-glyph.violet, .project-glyph.cyan, .project-glyph.orange, .project-glyph.indigo { color: #fff; background: #171816; box-shadow: 0 7px 22px rgba(17,18,16,.12); }
+
+.home {
+  background:
+    radial-gradient(circle at 83% 4%, rgba(255,255,255,.98), transparent 31%),
+    linear-gradient(160deg, #f7f8f7 0, #eef1f0 100%);
+}
+.home-primary-nav button.active { color: #fff; background: #171816; }
+.management-intro {
+  border-color: rgba(17,18,16,.075);
+  background:
+    radial-gradient(circle at 72% 36%, rgba(255,255,255,.92), transparent 24%),
+    rgba(255,255,255,.48);
+  box-shadow: 0 34px 95px rgba(20,22,19,.055), inset 0 1px 0 #fff;
+}
+.management-intro-copy > span, .projects-page-head > div > span, .home-action-grid header span { color: #777b77; }
+.management-trust span:first-child i, .management-visual-head span i { background: #171816; box-shadow: 0 0 0 5px rgba(17,18,16,.06); }
+.management-visual { border-color: rgba(17,18,16,.08); background: rgba(255,255,255,.57); box-shadow: 0 28px 85px rgba(17,18,16,.075), inset 0 1px 0 #fff; }
+.context-core { border-color: rgba(17,18,16,.08); background: rgba(255,255,255,.82); }
+.context-core > i { color: #fff; background: #171816; }
+.orbit-agent { border-color: rgba(17,18,16,.07); background: rgba(255,255,255,.76); }
+.management-summary article > i.violet, .management-summary article > i.amber,
+.management-summary article > i.green, .management-summary article.context-signal > i,
+.home-review-card > header > em, .home-review-body > i { color: #fff; background: #171816; }
+.home-focus-project:hover, .management-project-row:hover { border-color: rgba(17,18,16,.14); background: rgba(255,255,255,.9); }
+.home-focus-project > em, .management-stage.active { color: #444642; background: #eceeeb; }
+.home-review-link { color: #fff; background: #171816; }
+.management-progress > span > i { background: #171816; }
+.management-new-card:hover { border-color: #8a8e89; background: #f1f2f0; }
+
+.dashboard-library-wrap > button.active { color: #171816; border-color: rgba(17,18,16,.18); background: #eff0ee; }
+.dashboard-library > button:hover:not(:disabled) { color: #111210; background: #eff0ee; }
+.dashboard-surface.drop-active::after { border-color: #5d605c; background: rgba(17,18,16,.035); }
+.dashboard-drop-hint { color: #4a4c49; }
+.dashboard-drop-hint > .icon, .dashboard-addon-panel > header > i { color: #fff; background: #171816; box-shadow: 0 12px 30px rgba(17,18,16,.13); }
+.dashboard-addon-list > article > i.accent, .dashboard-addon-list > article > i.current,
+.dashboard-addon-list > article > i.attention { color: #454744; background: #eceeeb; }
+.dashboard-addon-list > article > i.success, .dashboard-addon-list > article > i.done { color: #fff; background: #171816; }
+.dashboard-addon-panel > footer span i { background: #171816; box-shadow: 0 0 0 4px rgba(17,18,16,.06); }
+.dashboard-addon-panel > footer button, .dashboard-addon-panel > header > button:hover { color: #3f413e; }
+
+.agent-config-title, .agent-config-tabs, .agent-config-content, .agent-config-detail,
+.agent-config-main, .skill-library, .agent-detail-card, .agent-roster {
+  border-color: rgba(17,18,16,.075);
+  background: rgba(255,255,255,.68);
+  box-shadow: 0 24px 72px rgba(17,18,16,.055);
+}
+.agent-config-tabs > button.active { color: #171816; }
+.agent-config-tabs > button.active::after { background: #171816; }
+.agent-config-tabs button em, .skill-grid article > header i, .skill-grid article > header span,
+.skill-agent-tags span, .skill-picker button > i { color: #4b4d49; background: #eceeeb; }
+.agent-roster > button:hover, .skill-card:hover, .agent-list-card:hover, .skill-picker button.selected { border-color: rgba(17,18,16,.12); background: #eff0ee; }
+.agent-roster > button > i.active { background: #171816; box-shadow: 0 0 0 3px #e7e9e6; }
+.agent-switch input:checked + i { background: #171816; }
+
+.modal { background: rgba(18,19,17,.44); }
+.modal header span { color: #6e726e; }
+.modal header button:hover { color: #fff; background: #171816; }
+.default-workflow-guide__head em, .confirm-warning { color: #484a47; border-color: rgba(17,18,16,.08); background: #eff0ee; }
+.default-workflow-guide ol li > i { color: #fff; background: #171816; }
+.toast { color: #fff; background: #171816; }
+
+.auth-loading { background: #f1f3f2; }
+.auth-loading-dot { background: #171816; }
+.signed-out-screen { background: radial-gradient(circle at 50% 0, #fff, transparent 34%), #ecefed; }
+.signed-out-card { color: #171816; border-color: rgba(17,18,16,.09); background: rgba(255,255,255,.68); box-shadow: 0 32px 90px rgba(17,18,16,.09); }
+.signed-out-icon { background: #171816; }
+.signed-out-card > p { color: #777b77; }
+.signed-out-card > h1 { color: #171816; }
+.signed-out-card > span { color: #858985; }
+.signed-out-card .primary-button { color: #fff; background: #171816; border-color: #171816; }
